@@ -18,7 +18,6 @@ const SearchBar = ({term, onTermChange, onEndEditing}) => {
           onEndEditing={onEndEditing}
         />
       </View>
-      <Text>{term}</Text>
     </View>
   );
 };
