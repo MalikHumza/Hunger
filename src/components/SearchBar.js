@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, TextInput, View, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const SearchBar = ({term, onTermChange, onEndEditing}) => {
+const SearchBar = ({ term, onTermChange, onTermSubmit}) => {
   // console.log(Icon)
   return (
     <View>
@@ -15,7 +15,8 @@ const SearchBar = ({term, onTermChange, onEndEditing}) => {
           onChangeText={onTermChange}
           autoCapitalize="none"
           autoCorrect={false}
-          onEndEditing={onEndEditing}
+          onEndEditing={onTermSubmit}
+  
         />
       </View>
     </View>
