@@ -15,15 +15,17 @@ const SearchScreen = () => {
   };
 
   return (
-    <ScrollView>
-      <View>
-        <SearchBar
-          term={term}
-          onTermChange={setTerm}
-          onTermSubmit={() => searchApi(term)}
-        />
-        {errorMessage ? <Text>{errorMessage}</Text> : null}
-        <Text style={styles.results}>We have found {results.length} results.</Text>
+    <>
+      <SearchBar
+        term={term}
+        onTermChange={setTerm}
+        onTermSubmit={() => searchApi(term)}
+      />
+      {errorMessage ? <Text>{errorMessage}</Text> : null}
+      <Text style={styles.results}>
+        We have found {results.length} results.
+      </Text>
+      <ScrollView>
         <ResultsList
           results={filterResultsByPrice('$')}
           title="Cost Effective"
@@ -33,15 +35,15 @@ const SearchScreen = () => {
           results={filterResultsByPrice('$$$')}
           title="Bit Spender"
         />
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
-  results:{
-    marginLeft: 15
-  }
+  results: {
+    marginLeft: 15,
+  },
 });
 
 export default SearchScreen;
