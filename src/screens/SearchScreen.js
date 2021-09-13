@@ -22,9 +22,6 @@ const SearchScreen = () => {
         onTermSubmit={() => searchApi(term)}
       />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
-      <Text style={styles.results}>
-        We have found {results.length} results.
-      </Text>
       <ScrollView>
         <ResultsList
           results={filterResultsByPrice('$')}
